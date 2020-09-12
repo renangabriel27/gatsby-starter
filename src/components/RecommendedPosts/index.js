@@ -5,7 +5,13 @@ import * as S from "./styled"
 const RecommendedPosts = ({ next, previous }) => (
   <S.RecommendedWrapper>
     {previous && (
-      <S.RecommendedLink to={previous.fields.slug} className="previous">
+      <S.RecommendedLink
+        to={previous.fields.slug}
+        cover
+        direction="left"
+        bg="#222"
+        className="previous"
+      >
         {previous.frontmatter.title}
       </S.RecommendedLink>
     )}
@@ -13,7 +19,13 @@ const RecommendedPosts = ({ next, previous }) => (
     {!previous && <S.RecommendedLink />}
 
     {next && (
-      <S.RecommendedLink to={next.fields.slug} className="next">
+      <S.RecommendedLink
+        to={next.fields.slug}
+        cover
+        direction="right"
+        bg="#222"
+        className="next"
+      >
         {next.frontmatter.title}
       </S.RecommendedLink>
     )}
